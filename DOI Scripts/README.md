@@ -9,8 +9,8 @@ Scripts are provided for:
 	- Minitng a new DOI
 
 Please note that the update and minting script, needs to be configured with your institutions APP_ID.
-Please set $app_id variable in these files to reflect a valid APP_ID.
+Please set <strong>$app_id</strong> variable in these files to reflect a valid APP_ID.
 
-Also, the address of the machince from where these scripts are run, must be registerd as valid IP adresses for your APP_ID by ANDS.
+Also note that the address of the machince from where these scripts are run, must be registered as a valid IP adresses for your APP_ID by ANDS.
 
 A very simple index.php file with some simple HTML forms is included as examples for how to execute these scripts,
