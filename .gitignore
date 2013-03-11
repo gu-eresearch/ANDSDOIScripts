@@ -1,0 +1,8 @@
+bin/
+develop-eggs/
+eggs/
+.installed.cfg
+parts/
+*.egg-info
+
+gu.ini
