@@ -14,7 +14,7 @@ class AndsDoiData(object):
         self.xml_creatorWrapper = "<creators>\n%s</creators>\n"
 
     doiConfig = {'apiKey': '<Your Api Key Here>',
-                 'apiBaseUrl': 'https://services.ands.org.au/doi/1.1'}
+                 'apiBaseUrl': 'https://services.ands.org.au/home/dois'}
 
     def getApiUrl(self, page):
         baseUrl = self.doiConfig["apiBaseUrl"]
@@ -23,23 +23,23 @@ class AndsDoiData(object):
         #https://services.ands.org.au/doi/1.1/mint.{response_type}/?app_id={app_id}&url={url}
         # Create = https://test.ands.org.au/home/dois/doi_mint.php?app_id=$app_id&url=$url
         if page == "create":
-            return baseUrl + "/mint.xml/?debug=true&app_id=" + apiKey + "&url="
+            return baseUrl + "/mint.php/?debug=true&app_id=" + apiKey + "&url="
 
         # Update = https://test.ands.org.au/home/dois/doi_update.php?app_id=$app_id&DOI=$DOI_id[&url=$url]
         if page == "update":
-            return baseUrl + "/update.xml/?app_id=" + apiKey + "&doi="
+            return baseUrl + "/update.php/?app_id=" + apiKey + "&doi="
 
         # Activate = https://test.ands.org.au/home/dois/doi_activate.php?app_id=$app_id&DOI=$DOI_id
         if page == "activate":
-            return baseUrl + "/activate.xml/?app_id=" + apiKey + "&doi="
+            return baseUrl + "/activate.php/?app_id=" + apiKey + "&doi="
 
         # Deactivate = https://test.ands.org.au/home/dois/doi_deactivate.php?app_id=$app_id&DOI=$DOI_id
         if page == "deactivate":
-            return baseUrl + "/activate.xml/?app_id=" + apiKey + "&doi="
+            return baseUrl + "/activate.php/?app_id=" + apiKey + "&doi="
 
         # Get = https://test.ands.org.au/home/dois/doi_xml.php?DOI=$DOI_id
         if page == "get":
-            return baseUrl + "/xml.xml/?doi="
+            return baseUrl + "/doi_xml.php/?doi="
 
     def buildXml(self, data, doi):
         xmlString = ""
